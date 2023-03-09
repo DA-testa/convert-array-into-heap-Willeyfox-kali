@@ -3,7 +3,7 @@
 
 def build_heap(data):
     swaps = []
-    size = length(data)
+    size = len(data)
     # TODO: Creat heap and heap sort
     # try to achieve  O(n) and not O(n2)
     for i in range(n - 1, -1, -1):
@@ -11,7 +11,11 @@ def build_heap(data):
             j = 2 * i + 2
             if j * 1 < n and data[i+1] < data[i]:
                 J = j + 1
-
+            if data[i] < data[j]:
+                break
+            swaps.append((i, j))
+            data[i], data[j] = data[j], data[i]
+            i = j
     return swaps
 
 
@@ -25,9 +29,9 @@ def main():
     if n == 'I':
         n = int(input())
         data = list(map(int, input().split()))
-
+        assert len(data) == n
     # checks if lenght of data is the same as the said lenght
-    assert len(data) == n
+    
 
     # calls function to assess the data 
     # and give back all swaps
