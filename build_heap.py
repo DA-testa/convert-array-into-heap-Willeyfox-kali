@@ -10,7 +10,7 @@ def build_heap(data):
         while 2 * i + 1 < size:
             j = 2 * i + 1
             if j + 1 < size and data[j+1] < data[j]:
-                J = j + 1
+                j = j + 1
             if data[i] <= data[j]:
                 break
             swaps.append((i, j))
