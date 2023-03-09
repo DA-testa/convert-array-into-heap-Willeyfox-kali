@@ -6,10 +6,10 @@ def build_heap(data):
     size = len(data)
     # TODO: Creat heap and heap sort
     # try to achieve  O(n) and not O(n2)
-    for i in range(n - 1, -1, -1):
-        while 2 * i + 1 < n:
-            j = 2 * i + 2
-            if j * 1 < n and data[i+1] < data[i]:
+    for i in range(size - 1, -1, -1):
+        while 2 * i + 1 < size:
+            j = 2 * i + 1
+            if j + 1 < size and data[j+1] < data[j]:
                 J = j + 1
             if data[i] < data[j]:
                 break
