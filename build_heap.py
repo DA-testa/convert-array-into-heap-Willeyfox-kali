@@ -14,7 +14,9 @@ def build_heap(data):
             if data[i] <= data[j]:
                 break
             swaps.append((i, j))
-            data[i], data[j] = data[j], data[i]
+            temp = data[i]
+            data[i] = data[j]
+            data[j] = temp
             i = j
     return swaps
 
@@ -30,6 +32,12 @@ def main():
         n = int(input())
         data = list(map(int, input().split()))
         assert len(data) == n
+    elif n == 'F':
+        file = input()
+        with open ("./test/"+file, 'r') as f:
+            n = int(f.readline().strip())
+            data = list(map(int, f.readline().split()))
+            assert len(data) == n
     # checks if lenght of data is the same as the said lenght
     
 
