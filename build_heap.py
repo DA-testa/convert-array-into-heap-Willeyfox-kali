@@ -34,7 +34,7 @@ def main():
         assert len(data) == n
     elif n == 'F':
         file = input()
-        with open ("./test/"+file, 'r') as f:
+        with open ("/test/"+file, 'r') as f:
             n = int(f.readline().strip())
             data = list(map(int, f.readline().split()))
             assert len(data) == n
